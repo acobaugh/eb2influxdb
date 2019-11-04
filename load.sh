@@ -14,7 +14,7 @@ fi
 csv-to-influxdb -s http://localhost:8086 \
 	-ts 'Order Date' \
 	-d eb \
-	-t 'Ticket Type','Billing State','Billing Zip','Billing Country','Billing City','Last Name','First Name','Email','Order Type' \
+	-t 'Ticket Type','Billing State','Billing Zip','Billing Country','Billing City','Last Name','First Name','Email','Order Type','Attendee #' \
 	-tf "2006-01-02 15:04:05-07:00" \
 	-f \
 	$1
