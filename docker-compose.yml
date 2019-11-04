@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana:/etc/grafana/provisioning
+    depends_on:
+      - influxdb
+  influxdb:
+    image: influxdb:1.7
+    volumes:
+      - ./influxdb-data:/var/lib/influxdb
+    ports:
+      - 8086:8086
+    environment:
+      INFLUXDB_DB: eb
